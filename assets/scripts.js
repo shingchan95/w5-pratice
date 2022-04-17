@@ -1,13 +1,29 @@
-var tableForm= $("#table-input");
 
-$("button").on("click", function(event){
+   // $(hashID).val(localStorage.getItem(prevID))
     
+    
+    $("button").on("click", function(event){
 
+        var prevID = $(this).parent().children("textarea").attr("id");
+        //var hashID= ['#'+prevID]
+        
+        
+        
         event.preventDefault()
-        var txtArea= $(this).prev().val()
+        
+        
+        
+        
+        
+        var txtArea= $(this).parent().children("textarea").val()
+        
+        localStorage.setItem(prevID,txtArea);
+        
         console.log(txtArea)
         
     });
+ 
+
         //var savedText = i + "-text"
 
 
@@ -33,32 +49,13 @@ $("button").on("click", function(event){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 var currentHour = moment().format("H:00:00");
 var a = currentHour.split(':'); 
 var currentMinutes = a[0] * 60; 
 //set and get items from localstroage 
+
+
 $("#09table-inputs").val(localStorage.getItem("text09"))
 $("#09button").on('click', function () {
     var txt09=$("#09table-inputs").val();
